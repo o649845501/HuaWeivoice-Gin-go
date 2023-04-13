@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>语音通知表单</title>
+    <style>
+        /* 设置文本框的圆角 */
+        input[type="text"],
+        textarea {
+            border-radius: 5px;
+            padding: 5px;
+            border: none;
+            outline: none;
+            box-shadow: 0 0 5px #999;
+            font-size: 16px;
+        }
+
+        /* 设置提交按钮的样式 */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* 设置表单居中 */
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<form method="POST" action="http://127.0.0.1:8080/call">
+    <label for="called">被叫号码：</label>
+    <input style="width: 300px" type="text" id="called" name="called"><br>多个号码使用,分隔<br>
+
+    <label for="voiceContent">语音内容：</label>
+    <textarea id="voiceContent" name="voiceContent" rows="5" cols="50">每句话使用$$包裹，使用~连接，例如$云南预警发布中心$~$红河州气象台2023年3月28日18时10分继续发布强对流黄色预警：预计未来12小时，全州13县市将出现雷电活动，并伴有短时强降水、大风、局地冰雹等强对流天气，请注意防范。$</textarea><br><br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
